@@ -1,0 +1,21 @@
+
+{% load static %}
+
+<header>
+    <nav class="navbar navbar-light" style="background-color: lightskyblue">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'main_menu' %}">
+                <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
+                <span style="color:red">My</span>project
+              </a>
+            <ul class="nav nav-pills">
+              <li class="nav-item"> 
+                <a class="nav-link {% if view_name  == 'about:author' %}active{% endif %}" 
+                href="{% url 'about:author' %}">
+                  Об авторе
+                </a>
+                </li>
+              </ul>
+          </div>
+      </nav>
+  </header> 
