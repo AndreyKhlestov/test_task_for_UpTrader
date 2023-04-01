@@ -2,13 +2,21 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 import debug_toolbar
-from django.views.generic import TemplateView
+
+from .view import universal_page_test_pages
 
 
 urlpatterns = [
-    path('',
-         TemplateView.as_view(template_name='index.html'),
-         name='main_menu'),
+    # т.к. в примерах я не использую named url,
+    # но в реальном проекте бы использовал
+    path('', universal_page_test_pages),
+    path('news/', universal_page_test_pages),
+    path('news/it/ai/', universal_page_test_pages),
+    path('news/it/', universal_page_test_pages),
+    path('photo/', universal_page_test_pages),
+    path('news/politics/', universal_page_test_pages),
+
+
     path('admin/', admin.site.urls),
     path('about/', include('about.urls', namespace='about')),
 ]
