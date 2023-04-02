@@ -1,7 +1,12 @@
 {% for item in menu_tree %}
     <ul>
-        <li{% if item.item.url == request.path %} class="active"{% endif %}>
-            <a href="{{ item.item.url }}">{{ item.item.title }}</a>
+        <li class="nav-item">
+            <a class="nav-link {% if item.item.url == request.path %} active {% endif %}"
+                href="{{ item.item.url }}"
+                {% if item.item.url == request.path %} style="color: black;" {% endif %}>
+                {{ item.item.title }}
+            </a>
+
             {% if item.children %}
                 {% include "includes/menu.html" with menu_tree=item.children %}
             {% endif %}

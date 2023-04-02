@@ -15,7 +15,10 @@ urlpatterns = [
     path('news/it/', universal_page_test_pages),
     path('photo/', universal_page_test_pages),
     path('news/politics/', universal_page_test_pages),
-
+    path('video/', universal_page_test_pages),
+    path('main/', universal_page_test_pages),
+    path('main/first/', universal_page_test_pages),
+    path('main/first/second/', universal_page_test_pages),
 
     path('admin/', admin.site.urls),
     path('about/', include('about.urls', namespace='about')),

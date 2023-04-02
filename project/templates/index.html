@@ -9,7 +9,10 @@
   <div class="container py-5">
     <h1>{{ title }}</h1>
     </div>
+  
   {% load menu_tags %}
-  {% draw_menu 'main_menu' %}
+  {% draw_menu 'main_menu' request %}
+  {% draw_menu 'additional_menu' request %}
+
 
 {% endblock %}
