@@ -23,7 +23,7 @@ def draw_menu(menu_name, request):
     first_menu_item = MenuItemModel.objects.filter(
         menu_name__name=menu_name,
         parent=None
-        ).prefetch_related('children').select_related('menu_name')
+        )
 
     menu_tree = [add_children(item) for item in first_menu_item]
     return {'menu_tree': menu_tree, 'request': request}
